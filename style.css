@@ -10,19 +10,19 @@ body {
     display: block;
     text-align: right;
 }
-.aaa img {
+.matrix img {
     width: 100%;
 }
-.aaa .more_inf {
+.matrix .more-info {
     font-family: fantasy, cursive;
 }
 
 @media (max-width:768px) {
-.aaa { 
+.matrix { 
     text-align: center;
 }
 }
-.centered-main-page-element {
+.todo-app {
     display: block;
     width: 500px;
     margin: 0 auto 0;
@@ -32,8 +32,9 @@ body {
     display: inline-block;
     flex-grow: 1;
 }
-.task-row-wrapper {
+.task-row {
     display: flex;
+    margin-top: 20px;
 }
 ul {
     margin:0;
@@ -84,7 +85,7 @@ input[type="text"]:focus {
     color: #333;
 }
 
-/* New Task */
+/* New Task no work! */
 label[for='new-task'] {
     display: block;
     margin: 0 0 20px;
@@ -129,7 +130,7 @@ button.delete img:hover {
 }
 
 /* Completed */
-ul#completed-tasks label {
+ul#done-tasks label {
     text-decoration: line-through;
     color: #888;
 }
@@ -139,11 +140,11 @@ ul li input[type=text] {
     display: none;
 }
 
-ul li.editMode input[type=text] {
+ul li.edit-mode input[type=text] {
     display: inline-block;
     width: 224px;
 }
 
-ul li.editMode label {
+ul li.edit-mode label {
     display: none;
 }
