@@ -33,18 +33,19 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className='task task-list__item__desc';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="task";
+    editInput.className="task task task_invisible";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="edit";
 
     deleteButton.className="delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.className = 'delete__picture';
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -85,11 +86,11 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
-    //If class of the parent is .edit-mode
+    var containsClass=listItem.classList.contains("item_edit-mode");
+    //If class of the parent is .item_edit-mode
     if(containsClass){
 
-        //switch to .edit-mode
+        //switch to .item_edit-mode
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
@@ -98,8 +99,10 @@ var editTask=function(){
         editBtn.innerText="Save";
     }
 
-    //toggle .edit-mode on the parent.
-    listItem.classList.toggle("edit-mode");
+    //toggle .item_edit-mode on the parent.
+    label.classList.toggle("item_edit-mode__desc");
+    editInput.classList.toggle("task_invisible");
+    listItem.classList.toggle("item_edit-mode");
 };
 
 
@@ -120,6 +123,8 @@ var taskCompleted=function(){
     console.log("Complete Task...");
 
     //Append the task list item to the #done-tasks
+    this.nextElementSibling.classList.toggle("done-tasks__item__desc");
+    this.nextElementSibling.classList.toggle("task-list__item__desc");
     var listItem=this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
@@ -132,6 +137,8 @@ var taskIncomplete=function(){
 //Mark task as incomplete.
     //When the checkbox is unchecked
     //Append the task list item to the #task-list.
+    this.nextElementSibling.classList.toggle("done-tasks__item__desc");
+    this.nextElementSibling.classList.toggle("task-list__item__desc");
     var listItem=this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
