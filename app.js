@@ -81,7 +81,7 @@ var editTask = function() {
         //switch to .item_edit-mode
         //label becomes the inputs value.
         label.innerText = editInput.value;
-        editBtn.innerTex = "Edit";
+        editBtn.innerText = "Edit";
     }else {
         editInput.value = label.innerText;
         editBtn.innerText = "Save";
