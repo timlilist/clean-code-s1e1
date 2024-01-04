@@ -16,7 +16,7 @@ body {
   width: 100%;
 }
 
-.matrix .more-info {
+.matrix .matrix__more-info {
   font-family: fantasy, cursive;
 }
 
@@ -43,23 +43,22 @@ body {
   margin-top: 20px;
 }
 
-ul {
+.list {
   margin:0;
   padding: 0px;
 }
 
-li,
-h1,
+.list__item,
 h2 {
   list-style: none;
 }
 
-input,
-button{
+.input,
+.button{
   outline: none;
 }
 
-button {
+.button {
   background: none;
   border: 0px;
   color: #888;
@@ -69,12 +68,11 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   color: #3a3A3a;
 }
 
 /* Heading */
-h1,
 h2 {
   color: #333;
   font-weight: 700;
@@ -85,7 +83,7 @@ h2 {
   text-transform: uppercase;
 }
 
-input[type="text"] {
+.input-text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -99,7 +97,7 @@ input[type="text"] {
   width: 226px;
 }
 
-input[type="text"]:focus {
+.input-text:focus {
   color: #333;
 }
 
@@ -108,7 +106,7 @@ input[type="text"]:focus {
 }
 
 /* Task list */
-li {
+.list__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -122,7 +120,7 @@ li {
   vertical-align: middle;
 }
 
-input[type="checkbox"] {
+.input-checkbox {
   margin: 0 10px;
 }
 
